@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.card
+{
+    display: inline-block;
+}
+.big.card
+{
+    width: 20%;
+    height: 10vw;
+}
+
+.middle.card
+{
+    width: 10%;
+    height: 10vw;
+}
+
+.small.card
+{
+    width: 5%;
+    height: 5vw;
+}
+
+.big.card.squared
+{
+    width: 20%;
+    height: 20vw;
+}
+
+.orange
+{
+    background: orange;
+}
+
+.yellow
+{
+    background: yellow;
+}
+
+.red
+{
+    background: red;
+}

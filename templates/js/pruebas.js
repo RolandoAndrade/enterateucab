@@ -8,4 +8,4 @@ async function fun()
     console.log(await b.getAll());
     console.log(await b.attendToEventWithID(3));
 }
-fun();
+//fun();
