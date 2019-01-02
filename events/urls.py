@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import ViewUser, CreateEvent, ViewEventByID, ViewAllEvents
+from .views import ViewUser, CreateEvent, ViewEventByID, ViewAllEvents, AddUserToEvent
 
 urlpatterns = [
     path('users/', include('rest_auth.urls')),
@@ -8,6 +8,7 @@ urlpatterns = [
     path('events/create', CreateEvent.as_view()),
     path('events/get/<pk>', ViewEventByID.as_view()),
     path('events/getAll', ViewAllEvents.as_view()),
+    path('events/attend/<pk>', AddUserToEvent.as_view()),
 ]
 
 

@@ -41,4 +41,7 @@ class AddUserToEvent(generics.UpdateAPIView):
     serializer_class = serializers.AddUserToEventSerializer
 
     def put(self, request, *args, **kwargs):
-        return self.update(request, *args, **kwargs)
+        instance = self.get_object()
+        instance.attendance.add(self.request.user)
+        instance.save()
+        return Response("Logrado")

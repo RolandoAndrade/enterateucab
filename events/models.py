@@ -36,7 +36,7 @@ class Event(models.Model):
     id = models.AutoField(primary_key = True)
     author = models.ForeignKey(User, on_delete = models.CASCADE, related_name = "author")
     date = models.DateTimeField(null = True, blank = True)
-    attendance = models.ManyToManyField(User)
+    attendance = models.ManyToManyField(User, related_name = "attendance")
     title = models.CharField(null = True, blank = True, max_length = 35)
     description = models.TextField(null = True, blank = True)
     cover = models.TextField(null = True, blank = True)
