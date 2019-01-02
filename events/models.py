@@ -35,7 +35,7 @@ class User(md.AbstractUser):
 class Event(models.Model):
     id = models.AutoField(primary_key = True)
     author = models.ForeignKey(User, on_delete = models.CASCADE, related_name = "author")
-    date = models.DateField(null = True, blank = True)
+    date = models.DateTimeField(null = True, blank = True)
     attendance = models.ManyToManyField(User)
     title = models.CharField(null = True, blank = True, max_length = 35)
     description = models.TextField(null = True, blank = True)
