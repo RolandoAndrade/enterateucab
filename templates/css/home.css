@@ -5,7 +5,9 @@
     /*font-family: 'Roboto', sans-serif;*/
     font-family: 'Thasadith', sans-serif;
 }
-
+body{
+    width: 100%;
+}
 .card
 {
     display: inline-block;
@@ -38,11 +40,6 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.margin-top
-{
-
 }
 
 .small.card
@@ -128,7 +125,7 @@
     position: relative;
     width: 100%;
     height: 100%;
-    background: rgba(33, 33, 33, 0.8);
+    background: rgba(33, 33, 33, 0.7);
 }
 
 .icon-card
@@ -172,18 +169,27 @@
 
 .navbar
 {
-    width: 20%;
+    width: 15%;
     display: inline-block;
     background: #212121;
-    height: calc(100vh - 100px);
-    vertical-align: top;
+    position: absolute;
+    height: calc(100vh);
+    top: 0;
+    text-align: center;
+    font-size: 30px;
+    color: white;
 }
 .content
 {
-    width: 75%;
     display: inline-block;
+
+    position: absolute;
+    left: 15%;
+    top: calc(50% + 25px);
+    transform: translate(0,-50%);
+    bottom: 0;
+    right: 0;
     text-align: center;
-    padding: 2.5%;
 }
 
 .vertical-card-container
@@ -215,6 +221,7 @@ header
     background: #212121;
     width: 100%;
     height: 100px;
+    text-align: center;
 }
 
 .mini-container
@@ -223,3 +230,83 @@ header
     width: calc(10vw + 0.3vw);
     vertical-align: top;
 }
+.title-event-card.big
+{
+    font-size: 1.5vw;
+    position: absolute;
+    bottom: 1vw;
+    right: 0;
+    left: 0;
+    text-align: center;
+}
+
+.title-event-card.middle
+{
+    font-size: 0.75vw;
+    position: absolute;
+    bottom: 0.5vw;
+    right: 0;
+    left: 0;
+    text-align: center;
+}
+
+.section-header
+{
+    width: 33%;
+    display: inline-block;
+    color: white;
+}
+.logo
+{
+    height: 70px;
+}
+.section-header.logo
+{
+    margin-top: 15px;
+    text-align: center;
+}
+
+
+.section-header.title
+{
+    font-size: 50px;
+    text-align: right;
+    vertical-align: top;
+    margin-top: 20px;
+}
+.join
+{
+    font-size: 80px;
+}
+
+.title-icon
+{
+    margin-right: 20px;
+}
+.menu-option
+{
+    width: 100%;
+    font-size: 2vw;
+    text-align: left;
+    padding: 0.5vw;
+}
+.menu-selection
+{
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+    cursor: pointer;
+    width: 100%;
+    overflow: hidden;
+}
+.menu-option:hover
+{
+    background: #2d2d2d;
+}
+
+@media (max-width: 1000px)
+{
+
+ }
+
+
