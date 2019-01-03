@@ -7,6 +7,7 @@
 }
 body{
     width: 100%;
+
 }
 .card
 {
@@ -24,8 +25,8 @@ body{
 }
 .big.card
 {
-    width: calc(24vw - 0.3vw);
-    height: calc(12vw - 0.3vw);
+    width: calc(27vw - 0.3vw);
+    height: calc(13.5vw - 0.3vw);
     background: url("../img/evento3.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -34,8 +35,8 @@ body{
 
 .middle.card
 {
-    width: calc(12vw - 0.3vw);
-    height: calc(12vw - 0.3vw);
+    width: calc(13.5vw - 0.3vw);
+    height: calc(13.5vw - 0.3vw);
     background: url("../img/evento1.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -44,16 +45,16 @@ body{
 
 .small.card
 {
-    width: calc(6vw - 0.3vw);
-    height: calc(6vw - 0.3vw);
+    width: calc(6.75vw - 0.3vw);
+    height: calc(6.75vw - 0.3vw);
     font-size: 3vw;
     line-height: 5vw;
 }
 
 .big.card.squared
 {
-    width: calc(24vw - 0.3vw);
-    height: calc(24vw - 0.3vw);
+    width: calc(27vw - 0.3vw);
+    height: calc(27vw - 0.3vw);
     background: url("../img/evento2.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -172,7 +173,7 @@ body{
     width: 15%;
     display: inline-block;
     background: #212121;
-    position: absolute;
+    position: fixed;
     height: calc(100vh);
     top: 0;
     text-align: center;
@@ -185,6 +186,8 @@ body{
     position: absolute;
     left: 15%;
     text-align: center;
+    right: 0;
+    top: 115px;
 }
 
 .vertical-card-container
@@ -197,7 +200,6 @@ body{
 
 .card-margin
 {
-    display: inline-block;
     padding: 0.15vw;
 }
 
@@ -237,7 +239,7 @@ header
 }
 .title-event-card.big
 {
-    font-size: 1.5vw;
+    font-size: 2vw;
     position: absolute;
     bottom: 1vw;
     right: 0;
@@ -247,7 +249,7 @@ header
 
 .title-event-card.middle
 {
-    font-size: 0.75vw;
+    font-size: 1vw;
     position: absolute;
     bottom: 0.5vw;
     right: 0;
@@ -322,47 +324,103 @@ footer
     background: #212121;
 }
 
+.column
+{
+    display: inline-block;
+}
+
 
 @media (max-width: 1000px) {
 
-    .big.card {
-        width: calc(30vw - 0.15vw);
-        height: calc(15vw - 0.15vw);
+    .big.card
+    {
+        width: calc(40vw - 0.3vw);
+        height: calc(20vw - 0.3vw);
     }
 
-    .middle.card {
-        width: calc(15vw - 0.15vw);
-        height: calc(15vw - 0.15vw);
+    .middle.card
+    {
+        width: calc(20vw - 0.3vw);
+        height: calc(20vw - 0.3vw);
     }
 
-    .small.card {
-        width: calc(7.5vw - 0.15vw);
-        height: calc(7.5vw - 0.15vw);
-        font-size: 3vw;
-        line-height: 5vw;
+    .small.card
+    {
+
     }
 
-    .big.card.squared {
-        width: 30vw;
-        height: 30vw;
+    .big.card.squared
+    {
+        width: calc(40vw - 0.3vw);
+        height: calc(40vw - 0.3vw);
     }
 
-    .minline
+    .mini-container
+    {
+
+    }
+    .content:last-child
     {
         display: block;
     }
 
-    .minblock
+    .break
     {
         display: inline-block;
     }
-    .mini-container
+    .inblock
     {
         display: inline-block;
-        width: auto;
-        vertical-align: top;
+    }
+    .number-day.big
+    {
+        font-size: 10vw;
+    }
+
+    .number-day.middle
+    {
+        font-size: 5vw;
+        display: block;
+    }
+
+    .text-day.middle
+    {
+        font-size: 1.75vw;
+    }
+    .text-day.big
+    {
+        font-size: 2.5vw;
+    }
+    .title-event-card.big
+    {
+        font-size: 2.5vw;
+    }
+
+    .title-event-card.middle
+    {
+        font-size: 1.75vw;
+    }
+
+    .section-header.title
+    {
+        font-size: 30px;
+        margin-top: 30px;
+    }
+    .logo
+    {
+        height: 60px;
     }
 }
+@media (max-width: 600px)
+{
+    .section-header.title
+    {
+        font-size: 15px;
+        margin-top: 40px;
+    }
 
-
-
+    .logo
+    {
+        height: 50px;
+    }
+}
