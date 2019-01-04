@@ -51,8 +51,8 @@ body{
 {
     width: calc(6.75vw - 0.3vw);
     height: calc(6.75vw - 0.3vw);
-    font-size: 3vw;
-    line-height: 5vw;
+    font-size: 4vw;
+    line-height: 6.75vw;
 }
 
 .big.card.squared
@@ -131,11 +131,12 @@ body{
     width: 100%;
     height: 100%;
     background: rgba(33, 33, 33, 0.6);
+    transition: all 0.5s;
 }
 
 .alpha:hover
 {
-    background: rgba(33, 33, 33, 0.8);
+    background: rgba(33, 33, 33, 0.4);
 }
 
 .icon-card
@@ -246,7 +247,7 @@ header
 .mini-container
 {
     display: inline-block;
-    width: calc(12vw);
+    width: calc(13.5vw);
     vertical-align: top;
 }
 .title-event-card.big
@@ -381,7 +382,10 @@ footer
 
     .small.card
     {
-
+        width: calc(10vw - 0.3vw);
+        height: calc(10vw - 0.3vw);
+        font-size: 5vw;
+        line-height: 10vw;
     }
 
     .big.card.squared
@@ -392,7 +396,7 @@ footer
 
     .mini-container
     {
-
+        width: 20vw;
     }
     .content:last-child
     {
@@ -478,7 +482,14 @@ footer
         font-size: 15px;
         margin-top: 40px;
     }
-
+    .section-header.min
+    {
+        font-size: 30px;
+    }
+    .button-menu
+    {
+        padding: 35px;
+    }
     .logo
     {
         height: 50px;

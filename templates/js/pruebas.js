@@ -64,27 +64,33 @@ function navbar()
     {
         if($('.navbar').position().left<0)
         {
+            $(".section-header.min").css("visibility","hidden");
             if(!active)
             {
+
                 active=true;
                 $('.navbar').animate({"left": '0%'}).promise().done(function ()
                 {
                     active=false;
                 });
-                $("header")
+
             }
         }
-        else
-        {
-            if(!active)
+        $("body").click
+        (
+          function(e)
+          {
+            if(e.target.className !== "navbar"&&!active)
             {
-                active=true;
+              $(".navbar").active=true;
                 $('.navbar').animate({"left": '-30%'}).promise().done(function ()
                 {
                     active=false;
                 });
+                $(".section-header.min").css("visibility","visible");
             }
-        }
+          }
+        );
     });
 }
 $(document).ready(function ()
