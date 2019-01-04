@@ -65,6 +65,7 @@ function navbar()
         if($('.navbar').position().left<0)
         {
             $(".section-header.min").css("visibility","hidden");
+            $(".dark-background").show();
             if(!active)
             {
 
@@ -82,7 +83,8 @@ function navbar()
           {
             if(e.target.className !== "navbar"&&!active)
             {
-              $(".navbar").active=true;
+                $(".dark-background").hide();
+                $(".navbar").active=true;
                 $('.navbar').animate({"left": '-30%'}).promise().done(function ()
                 {
                     active=false;
