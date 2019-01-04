@@ -20,7 +20,7 @@ function getNameOfDay(date)
 function getNameOfMonth(date)
 {
     const d=["Enero","Febrero", "Marzo", "Abril","Mayo", "Junio", "Julio","Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
-    return d[date.getMonth()];
+    return d[date.getUTCMonth()];
 }
 class CardEvent
 {
@@ -32,7 +32,6 @@ class CardEvent
         this.changeNumberDay(event.date.getDate(),i);
         this.changeTitle(event.title, i);
         this.changeCover(event.cover, i);
-        console.log(event.cover);
     }
     changeDay(day, i)
     {
@@ -102,12 +101,13 @@ $(document).ready(function ()
 
 
 
-function prueba()
+async function prueba()
 {
-    let date=new Date("2019-01-05T10:10:00");
-    console.log(date);
-    let event=new Event(1, 1, date, 1, "Maratón de programación", "", "https://www.coalitionagency.com/wp-content/uploads/Coalition-Event-Background.jpg", "", "");
-    new CardEvent(event,0);
+    let data=await new EventManager().getAll();
+    console.log(data);
+    for(let i=0;i<data.length&&i<10;i++)
+        new CardEvent(data[i],i);
+
 }
 
 prueba();

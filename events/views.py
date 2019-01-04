@@ -45,3 +45,8 @@ class AddUserToEvent(generics.UpdateAPIView):
         instance.attendance.add(self.request.user)
         instance.save()
         return Response("Logrado")
+
+
+class DeleteEvent(generics.DestroyAPIView):
+    queryset = models.Event.objects.all()
+    serializer_class = serializers.EventDataSerializer
