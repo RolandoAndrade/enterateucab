@@ -7,7 +7,10 @@
 }
 body{
     width: 100%;
-
+    background: url("../img/ucabblur.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .card
 {
@@ -126,7 +129,7 @@ body{
     position: relative;
     width: 100%;
     height: 100%;
-    background: rgba(33, 33, 33, 0.7);
+    background: rgba(33, 33, 33, 0.6);
 }
 
 .icon-card
@@ -172,7 +175,7 @@ body{
 {
     width: 15%;
     display: inline-block;
-    background: #212121;
+    background: rgba(33, 33, 33, 0.55);
     position: fixed;
     height: calc(100vh);
     top: 0;
@@ -225,10 +228,12 @@ body{
 
 header
 {
-    background: #212121;
-    width: 100%;
+    background: rgba(33, 33, 33, 0.55);
     height: 100px;
+    right: 0;
     text-align: center;
+    position: absolute;
+    left: 15%;
 }
 
 .mini-container
@@ -280,6 +285,10 @@ header
     text-align: right;
     vertical-align: top;
     margin-top: 20px;
+}
+.section-header.min
+{
+    width: 18%;
 }
 .join
 {
