@@ -11,6 +11,7 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 .card
 {
@@ -132,6 +133,11 @@ body{
     background: rgba(33, 33, 33, 0.6);
 }
 
+.alpha:hover
+{
+    background: rgba(33, 33, 33, 0.8);
+}
+
 .icon-card
 {
     position: absolute;
@@ -182,6 +188,7 @@ body{
     text-align: center;
     font-size: 30px;
     color: white;
+    z-index: 10;
 }
 .content
 {
@@ -283,12 +290,28 @@ header
 {
     font-size: 50px;
     text-align: right;
+    float: right;
     vertical-align: top;
     margin-top: 20px;
 }
 .section-header.min
 {
     width: 18%;
+    font-size: 50px;
+    text-align: left;
+    float: left;
+    visibility: hidden;
+}
+
+.button-menu
+{
+    transition: all 0.5s;
+    padding: 25px;
+    cursor: pointer;
+}
+.button-menu:hover
+{
+    background: #212121;
 }
 .join
 {
@@ -305,6 +328,9 @@ header
     font-size: 2vw;
     text-align: left;
     padding: 0.5vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    transition: all 0.5s;
 }
 .menu-selection
 {
@@ -418,6 +444,31 @@ footer
     .logo
     {
         height: 60px;
+    }
+    .section-header.min
+    {
+        visibility: visible;
+        width: 33%;
+    }
+    .content
+    {
+        left: 0;
+    }
+    .navbar
+    {
+        left: -30%;
+        width: 30%;
+    }
+    .menu-option
+    {
+        font-size: 3vw;
+    }
+    header
+    {
+        width: 100%;
+        left: 0;
+        z-index: 9;
+        position: fixed;
     }
 }
 @media (max-width: 600px)

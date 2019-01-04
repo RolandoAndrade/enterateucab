@@ -57,6 +57,43 @@ class CardEvent
         $(".card"+i).find(".card").css("background-image", 'url('+cover+')');
     }
 }
+function navbar()
+{
+    let active=false;
+    $(".button-menu").click(function ()
+    {
+        if($('.navbar').position().left<0)
+        {
+            if(!active)
+            {
+                active=true;
+                $('.navbar').animate({"left": '0%'}).promise().done(function ()
+                {
+                    active=false;
+                });
+                $("header")
+            }
+        }
+        else
+        {
+            if(!active)
+            {
+                active=true;
+                $('.navbar').animate({"left": '-30%'}).promise().done(function ()
+                {
+                    active=false;
+                });
+            }
+        }
+    });
+}
+$(document).ready(function ()
+{
+    navbar();
+});
+
+
+
 function prueba()
 {
     let date=new Date("2019-01-05T10:10:00");
