@@ -317,6 +317,7 @@ header
 .join
 {
     font-size: 80px;
+    cursor: pointer;
 }
 
 .title-icon
@@ -445,6 +446,7 @@ footer
         font-size: 30px;
         margin-top: 30px;
     }
+
     .logo
     {
         height: 60px;
@@ -487,6 +489,8 @@ footer
     z-index: 15;
     display: none;
 }
+
+
 @media (max-width: 600px)
 {
     .section-header.title
