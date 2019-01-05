@@ -61,7 +61,6 @@ class PostRequest
                     "X-CSRFToken": token,
                 }
             };
-        console.log(settings);
         return await fetch(this.url, settings)
                     .then(response => response.json())
                     .then(json => {

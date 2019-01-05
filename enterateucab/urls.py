@@ -18,12 +18,13 @@ from django.urls import path
 from django.conf.urls import include
 from django.conf.urls.static import static
 from django.conf import settings
-from .views import index
+from .views import index, login
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('events.urls')),
     path('', index, name="index"),
+    path('login/', login, name="login"),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

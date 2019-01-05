@@ -366,6 +366,13 @@ footer
     display: inline-block;
 }
 
+.profile-image-navbar
+{
+    width: 8vw;
+    height: 8vw;
+    margin-top: 1vw;
+    border-radius: 50%;
+}
 
 @media (max-width: 1000px) {
 
@@ -475,6 +482,11 @@ footer
         left: 0;
         z-index: 9;
         position: fixed;
+    }
+    .profile-image-navbar
+    {
+        width: 18vw;
+        height: 18vw;
     }
 }
 
