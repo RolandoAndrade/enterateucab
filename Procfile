@@ -1,0 +1,1 @@
+web: gunicorn enterateucab.wsgi --log-file -

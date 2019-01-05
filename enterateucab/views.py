@@ -9,4 +9,4 @@ def index(request):
         return render_to_response('mappy_board/home.html')
     else:
         # home"""
-    return render_to_response("../templates/html/index.html")
+    return render_to_response("../templates/html/home.html")

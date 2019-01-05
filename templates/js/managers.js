@@ -46,10 +46,10 @@ class JSONparser
     parseEvent(json)
     {
         if(json.author&&json.date&&
-            json.title&&json.description&&json.cover&&json.media&&json.location)
+            json.title&&json.description&&json.cover&&json.location)
         {
-            let event= new Event(json.id?json.id:0,json.author,json.date,
-                json.attendance?json.attendance.length:0,length,
+            let event= new Event(json.id?json.id:0,json.author,new Date(json.date),
+                json.attendance?json.attendance.length:0,
                 json.title, json.description, json.cover, json.media, json.location);
             return event;
         }
