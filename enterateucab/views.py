@@ -4,9 +4,27 @@ from django.shortcuts import redirect
 
 
 def index(request):
-    """if not isinstance(request.user, AnonymousUser):
+    if not isinstance(request.user, AnonymousUser):
         # already logged
-        return render_to_response('mappy_board/home.html')
+        return render_to_response("../templates/html/home-logged.html")
     else:
-        # home"""
-    return render_to_response("../templates/html/home.html")
+        # home
+        return render_to_response("../templates/html/home.html")
+
+
+def login(request):
+    if not isinstance(request.user, AnonymousUser):
+        # already logged
+        return redirect('../')
+    else:
+        # home
+        return render_to_response("../templates/html/login-form.html")
+
+
+def signup(request):
+    if not isinstance(request.user, AnonymousUser):
+        # already logged
+        return redirect('../')
+    else:
+        # home
+        return render_to_response("../templates/html/signup-form.html")

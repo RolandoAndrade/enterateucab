@@ -1,0 +1,87 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Entérate UCAB | Crear cuenta</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Thasadith" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/css/material-design-iconic-font.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sweetalert2.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="sign-card">
+        <a href="../" class="back-button"><i class="zmdi zmdi-arrow-back"></i></a>
+        <div class="title-login">Crear cuenta</div>
+        <div class="content">
+
+            <div class="boxes-container">
+                <div class="label-login">Nombre</div>
+                <input type="text" class="input-box name">
+                <div class="icon-login name"><i class="zmdi zmdi-account"></i></div>
+            </div>
+            <div class="boxes-container">
+                <div class="label-login">Apellido</div>
+                <input type="text" class="input-box surname">
+                <div class="icon-login surname"><i class="zmdi zmdi-account"></i></div>
+            </div>
+            <div class="boxes-container">
+                <div class="label-login">Carrera</div>
+                <select name="" id="" class="select-form career">
+                    <option value="">Profesor</option>
+                    <option value="">Administración de Empresas</option>
+                    <option value="">Comunicación Social</option>
+                    <option value="">Contaduría Pública</option>
+                    <option value="">Derecho</option>
+                    <option value="">Economía</option>
+                    <option value="">Educación</option>
+                    <option value="">Filosofía</option>
+                    <option value="">Ingeniería Civil</option>
+                    <option value="">Ingeniería Industrial</option>
+                    <option value="" selected>Ingeniería Informática</option>
+                    <option value="">Ingeniería Telecomunicaciones</option>
+                    <option value="">Letras</option>
+                    <option value="">Psicología</option>
+                    <option value="">Relaciones Industriales</option>
+                    <option value="">Sociología</option>
+                    <option value="">Teología</option>
+                </select>
+                <div class="icon-login career"><i class="zmdi zmdi-book"></i></div>
+            </div>
+            <div class="boxes-container">
+                <div class="label-login">Ubicación</div>
+                <select name="" id="" class="select-form location">
+                    <option value="1">Caracas</option>
+                    <option value="2">Los Teques</option>
+                    <option value="3">Puerto Ordaz</option>
+                    <option value="4">Coro</option>
+                </select>
+                <div class="icon-login location"><i class="zmdi zmdi-pin"></i></div>
+            </div>
+            <div class="boxes-container">
+                <div class="label-login">Correo electrónico</div>
+                <input type="email" class="input-box email">
+                <div class="icon-login email"><i class="zmdi zmdi-email"></i></div>
+            </div>
+            <div class="boxes-container">
+                <div class="label-login">Contraseña</div>
+                <input type="password" class="input-box pass">
+                <div class="icon-login lock"><i class="zmdi zmdi-lock"></i></div>
+                <div class="showme">
+                    <i class="zmdi zmdi-eye"></i>
+                </div>
+            </div>
+            <div class="bottom-login">¿Ya tienes una cuenta? <a href="../login" class="goTo">¡Inicia sesión!</a></div>
+            <div class="input-button signup">Iniciar sesión</div>
+        </div>
+    </div>
+    <script src="{% static 'js/jquery-3.1.1.min.js'%}"></script>
+    <script src="{% static 'js/sweetalert2.min.js'%}"></script>
+    <script src="{% static 'js/request.js'%}"></script>
+    <script src="{% static 'js/managers.js'%}"></script>
+    <script src="{% static 'js/dialogs.js'%}"></script>
+    <script src="{% static 'js/Validator.js'%}"></script>
+    <script src="{% static 'js/login-manager.js'%}"></script>
+</body>
+</html>

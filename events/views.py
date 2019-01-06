@@ -50,3 +50,13 @@ class AddUserToEvent(generics.UpdateAPIView):
 class DeleteEvent(generics.DestroyAPIView):
     queryset = models.Event.objects.all()
     serializer_class = serializers.EventDataSerializer
+
+
+class UpdateUserData(generics.UpdateAPIView):
+    queryset = models.User.objects.all()
+    serializer_class = serializers.UpdateUser
+
+
+class UpdateUserImage(generics.UpdateAPIView):
+    queryset = models.User.objects.all()
+    serializer_class = serializers.UpdateProfileImage

@@ -28,3 +28,17 @@ class AddUserToEventSerializer(ModelSerializer):
     class Meta:
         model = Event
         fields = ('attendance',)
+
+
+class UpdateUser(ModelSerializer):
+
+    class Meta:
+        model = User
+        fields = ('email', 'first_name', 'last_name', 'career', 'location',)
+
+
+class UpdateProfileImage(ModelSerializer):
+
+    class Meta:
+        model = User
+        fields = ('image',)
