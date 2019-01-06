@@ -103,7 +103,9 @@ $(document).ready(function ()
 
 async function prueba()
 {
+    $(".loading").show();
     let data=await new EventManager().getAll();
+    $(".loading").hide();
     console.log(data);
     for(let i=0;i<data.length&&i<10;i++)
         new CardEvent(data[i],i);
