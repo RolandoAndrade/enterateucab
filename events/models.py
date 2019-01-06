@@ -42,3 +42,4 @@ class Event(models.Model):
     cover = models.TextField(null = True, blank = True)
     media = models.TextField(null = True, blank = True)
     location = models.IntegerField(null = True, blank = True)
+    place = models.CharField(null = True, blank = True, max_length = 35)

@@ -15,7 +15,7 @@ class ViewUser(generics.RetrieveAPIView):
     def get(self, request, *args, **kwargs):
         if kwargs.get('pk') == 'me':
             return Response(self.get_serializer(request.user).data)
-        return Response("Error")
+        return self.retrieve(request, *args, **kwargs)
 
 
 class ViewEventByID(generics.RetrieveAPIView):

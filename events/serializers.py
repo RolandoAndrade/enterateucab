@@ -19,7 +19,7 @@ class UserSerializer(ModelSerializer):
 class CreateEventSerializer(ModelSerializer):
     class Meta:
         model = Event
-        fields = ('author', 'date', 'title', 'description', 'cover', 'media', 'location')
+        fields = ('author', 'date', 'title', 'description', 'cover', 'media', 'location', 'place')
 
 
 class AddUserToEventSerializer(ModelSerializer):

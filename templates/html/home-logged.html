@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="{%  static 'css/home.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Thasadith" rel="stylesheet">
     <link rel="stylesheet" href="{%  static 'css/css/material-design-iconic-font.min.css' %}">
+    <link rel="stylesheet" href="{%  static 'css/loading.css' %}">
+    <link href="{% static 'img/logo.png' %}" rel="shortcut icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <header>
@@ -21,7 +23,7 @@
 <body>
     <nav class="navbar">
         <div class="join">
-            <img class="profile-image-navbar" src="http://www.horoscopo.com/img/signs/perfile-sagitario.png" alt="">
+            <img class="profile-image-navbar" src="{% static 'img/user.png' %}" alt="">
         </div>
 
         <ul class="menu-selection">
@@ -281,6 +283,17 @@
             </div>
         </div>
     </div>
+
+    <!-------------Loading----------------->
+    <div class="loading">
+		<div id="loading27">
+      	      <div class="colorBalls"></div>
+		</div>
+		<div class="loadingText">
+			Espere un momento por favor...
+		</div>
+	</div>
+
     <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
     <script src="{% static 'js/request.js' %}"></script>
     <script src="{% static 'js/managers.js' %}"></script>

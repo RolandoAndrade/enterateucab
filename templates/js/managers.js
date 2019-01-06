@@ -1,3 +1,47 @@
+class MyDate
+{
+    constructor(date)
+    {
+        this.date=new Date(date);
+    }
+    getNameOfDay()
+    {
+        const d=["Domingo", "Lunes","Martes", "Miércoles", "Jueves","Viernes", "Sábado" ];
+        return d[this.date.getDay()];
+    }
+    getNameOfMonth()
+    {
+        const d=["Enero","Febrero", "Marzo", "Abril","Mayo", "Junio", "Julio","Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+        return d[this.date.getUTCMonth()];
+    }
+    getDay()
+    {
+        return this.date.getDate();
+    }
+
+    getCompleteHour()
+    {
+        let s=" a.m.";
+        let hour=this.date.getUTCHours();
+        let minutes=""+this.date.getUTCMinutes();
+        if(hour>12)
+        {
+            s=" p.m."
+            hour-=12;
+        }
+        if(minutes.length===1)
+        {
+            minutes="0"+minutes;
+        }
+        return hour+":"+minutes+s;
+    }
+
+    getDateString()
+    {
+        return this.getNameOfDay()+" "+this.getDay()+" de "+this.getNameOfMonth();
+    }
+}
+
 class User
 {
     constructor(email, password, firstName, lastName, career, location, image, attendance)
@@ -15,7 +59,7 @@ class User
 
 class Event
 {
-    constructor(id, author, date, attendance, title, description, cover, media, location)
+    constructor(id, author, date, attendance, title, description, cover, media, location, place)
     {
         this.id = id;
         this.author = author;
@@ -25,7 +69,22 @@ class Event
         this.description = description;
         this.cover = cover;
         this.media = media;
-        this.location = location;
+        this.location=location;
+        this.place = place;
+    }
+    getLocationName()
+    {
+        switch (this.location)
+        {
+            case 1:
+                return "Caracas";
+            case 2:
+                return "Los Teques";
+            case 3:
+                return "Puerto Ordaz";
+            case 4:
+                return "Coro"
+        }
     }
 }
 
@@ -48,9 +107,12 @@ class JSONparser
         if(json.author&&json.date&&
             json.title&&json.description&&json.cover&&json.location)
         {
-            let event= new Event(json.id?json.id:0,json.author,new Date(json.date),
+            console.log(json.description);
+            json.description=json.description.replace(/\r\n/g, "<br />");
+            console.log(json.description);
+            let event= new Event(json.id?json.id:0,json.author,new MyDate(json.date),
                 json.attendance?json.attendance.length:0,
-                json.title, json.description, json.cover, json.media, json.location);
+                json.title, json.description, json.cover, json.media, json.location, json.place);
             return event;
         }
         return null;
@@ -96,6 +158,13 @@ class UserDAO
     async getUser()
     {
         const request=new GetRequest('../api/users/get/me');
+        const response = await request.execute();
+        return response;
+    }
+
+    async getUserByID(id)
+    {
+        const request=new GetRequest('../api/users/get/'+id);
         const response = await request.execute();
         return response;
     }
@@ -162,6 +231,12 @@ class AuthManager
         const response = await this.dao.getUser();
         return new JSONparser().parseUser(response);
     }
+
+    async other(id)
+    {
+        const response = await this.dao.getUserByID(id);
+        return new JSONparser().parseUser(response);
+    }
 }
 
 class EventManager
@@ -171,9 +246,9 @@ class EventManager
         this.dao=new EventDAO();
     }
 
-    async create(date, title, description, cover, media, location)
+    async create(date, title, description, cover, media, location, place)
     {
-        const event=new Event(0,0,date,0,title, description, cover, media, location);
+        const event=new Event(0,0,date,0,title, description, cover, media, location, place);
         const response= await this.dao.create(event);
         return new JSONparser().parseEvent(response);
     }
@@ -193,7 +268,23 @@ class EventManager
         {
             r.push(parser.parseEvent(response[i]));
         }
+        this.sort(r);
         return r;
+    }
+
+    sort(data)
+    {
+        for(let i=0;i<data.length;i++)
+        {
+            for(let j=i+1;j<data.length;j++) {
+                if (data[i].date.date > data[j].date.date)
+                {
+                    let aux=data[i];
+                    data[i]=data[j];
+                    data[j]=aux;
+                }
+            }
+        }
     }
 
     async attendToEventWithID(id)

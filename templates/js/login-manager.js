@@ -46,7 +46,9 @@ $(".showme").click(function () {
 $(".input-button.login").click(async function ()
 {
     const manager=new AuthManager();
+    $(".loading").show();
     const user=await manager.login($(".input-box.email").val(),$(".input-box.pass").val());
+    $(".loading").hide();
     if(!user.key)
     {
         new SwalModal("Error","Usuario o contraseña incorrectos", "error", false,
@@ -95,7 +97,10 @@ $(".input-button.signup").click(async function ()
         return;
     }
     const manager=new AuthManager();
+    $(".loading").show();
     const user=await manager.signup($(".input-box.email").val(),$(".input-box.pass").val(),$(".input-box.name").val(),$(".input-box.surname").val(),$(".select-form.career")[0].options[$(".select-form.career")[0].selectedIndex].text,$(".select-form.location").val(),"");
+    $(".loading").hide();
+
     if(!user.key)
     {
         new ErrorDialog("Un usuario ya tiene esta cuenta de correo registrada");

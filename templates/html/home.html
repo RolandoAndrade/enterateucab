@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <title>Entérate UCAB</title>
     <link rel="stylesheet" href="{%  static 'css/home.css' %}">
+    <link rel="stylesheet" href="{%  static 'css/loading.css' %}">
+    <link href="{% static 'img/logo.png' %}" rel="shortcut icon">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Thasadith" rel="stylesheet">
     <link rel="stylesheet" href="{%  static 'css/css/material-design-iconic-font.min.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,6 +21,7 @@
     <div class="section-header title">INICIO <i class="zmdi zmdi-home title-icon"></i></div>
 </header>
 <body>
+    <!-------------Navbar----------------->
     <nav class="navbar">
         <a class="join" href="login">
             <i class="zmdi zmdi-account-add join-icon"></i>
@@ -31,6 +34,8 @@
         </ul>
     </nav>
     <div class="dark-background"></div>
+
+    <!-------------Content----------------->
     <div class="content">
         <div class="column inline">
             <div class="card-margin card1">
@@ -281,6 +286,19 @@
             </div>
         </div>
     </div>
+
+
+    <!-------------Loading----------------->
+    <div class="loading">
+		<div id="loading27">
+      	      <div class="colorBalls"></div>
+		</div>
+		<div class="loadingText">
+			Espere un momento por favor...
+		</div>
+	</div>
+
+
     <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
     <script src="{% static 'js/request.js' %}"></script>
     <script src="{% static 'js/managers.js' %}"></script>

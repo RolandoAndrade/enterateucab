@@ -1,0 +1,175 @@
+*{
+    margin: 0;
+    padding: 0;
+    /*font-family: 'Roboto', sans-serif;*/
+    font-family: 'Thasadith', sans-serif;
+}
+body
+{
+    width: 100%;
+    background: url("../img/ucabblur.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+    min-height: 100%;
+}
+
+.event-card
+{
+    font-size: 0;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    margin: 5% auto;
+    text-align: center;
+}
+
+.event-image
+{
+    width: 100%;
+    height: 200px;
+    background: url("../img/evento2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.data{
+    background-color: rgba(33,33,33,0.6);
+}
+.author
+{
+    width: 20%;
+    border-radius: 50%;
+    top: 200px;
+    transform: translate(0,-50%);
+    position: absolute;
+}
+.author img
+{
+    width: 100%;
+}
+.stat
+{
+    font-size: 15px;
+    display: inline-block;
+    width: 25%;
+    color: white;
+    text-align: center;
+    vertical-align: top;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.icon-stat
+{
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.content
+{
+
+}
+.event-title
+{
+    font-size: 30px;
+    color: #424242;
+    background: rgba(0, 180, 255, 0.6);
+    color: white;
+    padding: 35px;
+}
+.description
+{
+    background: rgba(255,255,255,0.9);
+    font-size: 15px;
+    text-align: justify;
+    line-height: 25px;
+    padding: 25px;
+}
+
+.stat.name-author
+{
+    vertical-align: bottom;
+    text-align: left;
+    min-height: 60px;
+    position: relative;
+}
+
+.stat.name-author>.name
+{
+    position: absolute;
+    top: 70%;
+    font-size: 10px;
+    text-align: center;
+    width: 80%;
+}
+
+.fast-info
+{
+    background: rgba(33,33,33,0.6);
+    padding: 25px;
+    color: white;
+}
+.column
+{
+    width: 50%;
+    display: inline-block;
+    font-size: 15px;
+}
+.icon-fast
+{
+    display: inline-block;
+    width: 18%;
+    font-size: 30px;
+}
+.data-fast
+{
+    display: inline-block;
+    width: 80%;
+    vertical-align: baseline;
+}
+
+.assist
+{
+    font-size: 20px;
+    padding: 15px;
+    background: rgba(255, 182, 78, 0.6);
+    color: white;
+    cursor: pointer;
+}
+
+.back-button-float
+{
+    font-size: 50px;
+    padding: 25px;
+    color: white;
+    text-decoration: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.back-button-float:visited
+{
+    color: white;
+    text-decoration: none;
+}
+@media (max-width: 600px)
+{
+    .back-button-float
+    {
+        font-size: 30px;
+        color: white;
+        width: 50px;
+        height: 50px;
+        left: -50px;
+        line-height: 0px;
+        top: calc(100%  - 50px);
+
+        background: rgba(33,33,33,0.8);
+        border-radius: 50%;
+    }
+    .icon-back
+    {
+        transform: translate(15px, -10px);
+    }
+}
