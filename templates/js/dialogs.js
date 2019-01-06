@@ -27,3 +27,13 @@ class SwalModal
 		}).then(this.action).catch(swal.noop);
     }
 }
+
+class ErrorDialog extends SwalModal
+{
+    constructor(message)
+    {
+        super("Error",message, "error", false,
+        "#ffb64e","","Ok", "", null);
+        this.show();
+    }
+}

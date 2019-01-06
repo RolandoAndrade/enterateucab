@@ -19,3 +19,12 @@ def login(request):
     else:
         # home
         return render_to_response("../templates/html/login-form.html")
+
+
+def signup(request):
+    if not isinstance(request.user, AnonymousUser):
+        # already logged
+        return redirect('../')
+    else:
+        # home
+        return render_to_response("../templates/html/signup-form.html")
