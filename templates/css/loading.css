@@ -1,5 +1,5 @@
 .loading{
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
@@ -12,14 +12,14 @@
 {
     font-size: 20px;
     color: #fff;
-    position: absolute;
+    position: fixed;
     top: 55%;
     left: 0;
     right: 0;
     text-align: center;
 }
 #loading27{
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 0;
     right: 0;

@@ -28,3 +28,12 @@ def signup(request):
     else:
         # home
         return render_to_response("../templates/html/signup-form.html")
+
+
+def viewEvents(request, pk):
+    if not isinstance(request.user, AnonymousUser):
+        # already logged
+        return render_to_response("../templates/html/event-info-log.html")
+    else:
+        # home"""
+        return render_to_response("../templates/html/event-info.html")

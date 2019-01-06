@@ -11,27 +11,17 @@ async function fun()
 //fun();
 */
 
-
-function getNameOfDay(date)
-{
-    const d=["Domingo", "Lunes","Martes", "Miércoles", "Jueves","Viernes", "Sábado" ];
-    return d[date.getDay()];
-}
-function getNameOfMonth(date)
-{
-    const d=["Enero","Febrero", "Marzo", "Abril","Mayo", "Junio", "Julio","Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
-    return d[date.getUTCMonth()];
-}
 class CardEvent
 {
     constructor(event, i)
     {
         i++;
-        this.changeDay(getNameOfDay(event.date),i);
-        this.changeMonth(getNameOfMonth(event.date),i);
-        this.changeNumberDay(event.date.getDate(),i);
+        this.changeDay(event.date.getNameOfDay(),i);
+        this.changeMonth(event.date.getNameOfMonth(),i);
+        this.changeNumberDay(event.date.getDay(),i);
         this.changeTitle(event.title, i);
         this.changeCover(event.cover, i);
+        this.onClickEvent(event, i);
     }
     changeDay(day, i)
     {
@@ -54,6 +44,13 @@ class CardEvent
     changeCover(cover, i)
     {
         $(".card"+i).find(".card").css("background-image", 'url('+cover+')');
+    }
+    onClickEvent(event, i)
+    {
+        $(".card"+i).click(function ()
+        {
+            window.location="events/"+event.id;
+        });
     }
 }
 function navbar()
@@ -101,15 +98,19 @@ $(document).ready(function ()
 
 
 
+
 async function prueba()
 {
     $(".loading").show();
     let data=await new EventManager().getAll();
+    let user=await new AuthManager().me();
     $(".loading").hide();
-    console.log(data);
     for(let i=0;i<data.length&&i<10;i++)
         new CardEvent(data[i],i);
-
+    if(user.image&&user.image.includes("http"))
+    {
+        $(".profile-image-navbar").attr("src",user.image);
+    }
 }
 
 prueba();

@@ -37,3 +37,13 @@ class ErrorDialog extends SwalModal
         this.show();
     }
 }
+
+class SuccessDialog extends SwalModal
+{
+    constructor(message)
+    {
+        super("Perfecto",message, "success", false,
+        "#ffb64e","","Ok", "", null);
+        this.show();
+    }
+}
