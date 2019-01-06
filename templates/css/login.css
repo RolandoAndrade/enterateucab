@@ -36,8 +36,8 @@ body{
     width: 90%;
     max-width: 600px;
     position: absolute;
-    top: 10%;
-    margin-bottom: 10%;
+    top:5%;
+    margin-bottom: 5%;
     left: 50%;
     transform: translate(-50%,0);
     text-align: center;

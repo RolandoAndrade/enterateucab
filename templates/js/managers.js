@@ -15,7 +15,7 @@ class User
 
 class Event
 {
-    constructor(id, author, date, attendance, title, description, cover, media, location)
+    constructor(id, author, date, attendance, title, description, cover, media, location, place)
     {
         this.id = id;
         this.author = author;
@@ -26,6 +26,7 @@ class Event
         this.cover = cover;
         this.media = media;
         this.location = location;
+        this.location = place;
     }
 }
 
@@ -50,7 +51,7 @@ class JSONparser
         {
             let event= new Event(json.id?json.id:0,json.author,new Date(json.date),
                 json.attendance?json.attendance.length:0,
-                json.title, json.description, json.cover, json.media, json.location);
+                json.title, json.description, json.cover, json.media, json.location, json.place);
             return event;
         }
         return null;
@@ -171,9 +172,9 @@ class EventManager
         this.dao=new EventDAO();
     }
 
-    async create(date, title, description, cover, media, location)
+    async create(date, title, description, cover, media, location, place)
     {
-        const event=new Event(0,0,date,0,title, description, cover, media, location);
+        const event=new Event(0,0,date,0,title, description, cover, media, location, place);
         const response= await this.dao.create(event);
         return new JSONparser().parseEvent(response);
     }
