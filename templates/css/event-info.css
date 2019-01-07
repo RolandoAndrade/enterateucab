@@ -7,7 +7,7 @@
 body
 {
     width: 100%;
-    background: url("../img/ucabblur.jpg");
+    background-image: url("../img/ucabblur.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
