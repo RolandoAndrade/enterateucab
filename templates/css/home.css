@@ -540,3 +540,15 @@ a:visited{
     color: white;
     text-decoration: none;
 }
+
+@media (max-width: 600px)
+{
+    html
+    {
+        height: calc(100% + 50px);
+    }
+    body
+    {
+        height: calc(100% + 50px);
+    }
+}
