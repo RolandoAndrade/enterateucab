@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    /*font-family: 'Roboto', sans-serif;*/
+    font-family: 'Thasadith', sans-serif;
+}
+body
+{
+    width: 100%;
+    background: url("../img/ucabblur.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+    min-height: 100%;
+}
+
+
+.create-card
+{
+    font-size: 0;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    margin: 5% auto;
+    text-align: center;
+}
