@@ -17,12 +17,9 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
     background-attachment: fixed;
     min-height: 100%;
-}
-.semibody
-{
-    position: relative;
 }
 .card
 {
