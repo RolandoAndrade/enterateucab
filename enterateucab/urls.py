@@ -18,7 +18,7 @@ from django.urls import path
 from django.conf.urls import include
 from django.conf.urls.static import static
 from django.conf import settings
-from .views import index, login, signup, viewEvents
+from .views import index, login, signup, viewEvents, createEvents
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,6 +27,7 @@ urlpatterns = [
     path('login/', login, name="login"),
     path('signup/', signup, name="signup"),
     path('events/<pk>', viewEvents, name="viewEvents"),
+    path('create/', createEvents, name="createEvents"),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

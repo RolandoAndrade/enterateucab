@@ -107,7 +107,7 @@ async function prueba()
     $(".loading").hide();
     for(let i=0;i<data.length&&i<10;i++)
         new CardEvent(data[i],i);
-    if(user.image&&user.image.includes("http"))
+    if(user!=null&&user.image&&user.image.includes("http"))
     {
         $(".profile-image-navbar").attr("src",user.image);
     }

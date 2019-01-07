@@ -47,3 +47,30 @@ class SuccessDialog extends SwalModal
         this.show();
     }
 }
+
+class TimerDialog
+{
+    constructor(title, message, type, time)
+    {
+        this.title = title;
+        this.message = message;
+        this.type = type;
+        this.time = time;
+    }
+
+    show() {
+        let timerInterval
+        swal(
+            {
+                title: this.title,
+                type: this.type,
+                html: this.message,
+                timer: this.time,
+                onClose: () => {
+                    clearInterval(timerInterval);
+                    window.location="../"
+                }
+            }).then((result) => {
+        });
+    }
+}

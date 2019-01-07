@@ -1,16 +1,95 @@
+{% load staticfiles %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Entérate UCAB | Crear evento</title>
-    <link rel="stylesheet" href="../css/create-form.css">
-    <link rel="stylesheet" href="../css/css/material-design-iconic-font.min.css">
-    <link rel="stylesheet" href="../css/sweetalert2.css">
+    <link rel="stylesheet" href="{% static 'css/event-info.css' %}">
+    <link rel="stylesheet" href="{% static 'css/create-form.css' %}">
+    <link rel="stylesheet" href="{% static 'css/css/material-design-iconic-font.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sweetalert2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/loading.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Thasadith" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+    <div class="event-card">
+        <div class="text-upload">
+            Sube una imagen
+        </div>
+        <div class="event-image">
 
+        </div>
+        <div class="data">
+            <div class="stat name-author">
+                <div class="name">
+                    Rolando Andrade
+                </div>
+            </div>
+            <div class="author">
+                <img id="author-profile-image" src="{%  static  'img/user.png' %}" alt="">
+            </div>
+            <div class="stat place">
+                <div class="icon-stat">
+                    <i class="zmdi zmdi-pin"></i>
+                </div>
+                <div class="data-stat place">
+                    Escribe un sitio
+                    <input class="input-create" id="place" type="text" placeholder="Recinto" maxlength="35">
+                </div>
+            </div>
+            <div class="stat date">
+                <div class="icon-stat">
+                    <i class="zmdi zmdi-calendar"></i>
+                </div>
+                <div class="data-stat date">
+                    Selecciona una fecha
+                    <input class="input-create" id="date" type="date">
+                </div>
+            </div>
+            <div class="stat hour">
+                <div class="icon-stat">
+                    <i class="zmdi zmdi-alarm"></i>
+                </div>
+                <div class="data-stat hour">
+                    Selecciona una hora
+                    <input class="input-create" id="hour" type="time">
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="event-title">
+                <input type="text" class="input-create big" id="title" placeholder="Escribe el título del evento" maxlength="35">
+            </div>
+            <div class="description">
+                <textarea name="" cols="30" rows="10" id="description" class="text-area"></textarea>
+            </div>
+        </div>
+        <div class="ready">
+            Listo <i class="zmdi zmdi-check"></i>
+        </div>
+    </div>
+    <a href="../" class="back-button-float">
+        <i class="zmdi zmdi-arrow-back icon-back"></i>
+    </a>
+
+        <!-------------Loading----------------->
+    <div class="loading">
+		<div id="loading27">
+      	      <div class="colorBalls"></div>
+		</div>
+		<div class="loadingText">
+			Espere un momento por favor...
+		</div>
+	</div>
     <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+    <script src="{% static 'js/jquery-3.1.1.min.js'%}"></script>
+    <script src="{% static 'js/sweetalert2.min.js'%}"></script>
+    <script src="{% static 'js/request.js'%}"></script>
+    <script src="{% static 'js/managers.js'%}"></script>
+    <script src="{% static 'js/dialogs.js'%}"></script>
+    <script src="{% static 'js/create-form.js' %}"></script>
+
+
 </body>
 </html>
