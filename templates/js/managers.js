@@ -107,9 +107,7 @@ class JSONparser
         if(json.author&&json.date&&
             json.title&&json.description&&json.cover&&json.location)
         {
-            console.log(json.description);
-            json.description=json.description.replace(/\r\n/g, "<br />");
-            console.log(json.description);
+            json.description=json.description.replace(/\n/g, "<br />");
             let event= new Event(json.id?json.id:0,json.author,new MyDate(json.date),
                 json.attendance?json.attendance.length:0,
                 json.title, json.description, json.cover, json.media, json.location, json.place);
@@ -181,7 +179,8 @@ class EventDAO
             description: event.description,
             cover: event.cover,
             media: event.media,
-            location: event.location
+            location: event.location,
+            place: event.place
         };
         const request = new PostRequest(data,'../api/events/create');
         return await request.execute();
@@ -250,6 +249,7 @@ class EventManager
     {
         const event=new Event(0,0,date,0,title, description, cover, media, location, place);
         const response= await this.dao.create(event);
+        console.log(response);
         return new JSONparser().parseEvent(response);
     }
 

@@ -332,22 +332,29 @@ header
 {
     margin-right: 20px;
 }
+.menu-selection li
+{
+    text-align: left;
+    width: 100%;
+}
 .menu-option
 {
     width: 100%;
+    display: block;
     font-size: 2vw;
     text-align: left;
-    padding: 0.5vw;
     padding-top: 1vw;
     padding-bottom: 1vw;
     transition: all 0.5s;
 }
+
+
+
 .menu-selection
 {
     position: absolute;
     top: 50%;
     transform: translate(0,-50%);
-    cursor: pointer;
     width: 100%;
     overflow: hidden;
 }
@@ -545,10 +552,14 @@ a:visited{
 {
     html
     {
-        height: calc(100% + 50px);
+        height: calc(100% + 56px);
     }
     body
     {
-        height: calc(100% + 50px);
+        height: calc(100% + 56px);
     }
+}
+.menu-option a
+{
+    font-size: inherit;
 }
