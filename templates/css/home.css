@@ -20,6 +20,10 @@ body{
     background-attachment: fixed;
     min-height: 100%;
 }
+.semibody
+{
+    position: relative;
+}
 .card
 {
     display: inline-block;
