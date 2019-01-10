@@ -89,10 +89,10 @@ WSGI_APPLICATION = 'enterateucab.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'eventos',
-        'USER': 'postgres',
-        'PASSWORD': '1',
-        'HOST': 'localhost',
+        'NAME': 'dr64oh2vmpduk',
+        'USER': 'oaeyfriuptlehl',
+        'PASSWORD': '97d50b3f1e3c79068fe89538563315c1e57a5bd2d02a6b6f9617bdc2c26abf91',
+        'HOST': 'ec2-174-129-18-247.compute-1.amazonaws.com',
         'PORT': 5432,
     }
 }
