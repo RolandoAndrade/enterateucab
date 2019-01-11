@@ -286,7 +286,8 @@ header
 }
 .logo
 {
-    height: 70px;
+    height: 100px;
+    width: 100%;
 }
 .section-header.logo
 {
@@ -471,6 +472,7 @@ footer
 
     .logo
     {
+        margin-top: 20px;
         height: 60px;
     }
     .section-header.min
@@ -536,7 +538,19 @@ footer
     .logo
     {
         height: 50px;
+        margin-top: 25px;
     }
+    .menu-option
+    {
+        font-size: 7vw;
+    }
+    .navbar
+    {
+        left: -50%;
+        width: 50%;
+    }
+
+
 }
 
 a{
