@@ -92,8 +92,7 @@ class JSONparser
 {
     parseUser(json)
     {
-        if(json.email&&json.first_name&&json.last_name&&
-            json.career&&json.location&&json.image&&json.attendance)
+        if(json.email)
         {
             let user= new User(json.email,"",json.first_name,
                 json.last_name, json.career, json.location, json.image, json.attendance);
@@ -249,7 +248,6 @@ class EventManager
     {
         const event=new Event(0,0,date,0,title, description, cover, media, location, place);
         const response= await this.dao.create(event);
-        console.log(response);
         return new JSONparser().parseEvent(response);
     }
 
