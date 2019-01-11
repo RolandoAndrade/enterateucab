@@ -81,7 +81,7 @@ function navbar()
             {
                 $(".dark-background").hide();
                 $(".navbar").active=true;
-                $('.navbar').animate({"left": '-30%'}).promise().done(function ()
+                $('.navbar').animate({"left": -$('.navbar').width()+"px"}).promise().done(function ()
                 {
                     active=false;
                 });
