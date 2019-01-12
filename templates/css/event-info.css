@@ -146,6 +146,7 @@ body
 }
 
 .button-edit{
+    display: none;
     width: 70px;
     height: 70px;
     line-height: 70px;

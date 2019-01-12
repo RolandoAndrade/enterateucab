@@ -47,6 +47,7 @@ async function retrieveEvent()
         const user = await author.me();
         if(user!=null)
         {
+            if(user.email===aut.email)
             editableButton();
         }
     }
