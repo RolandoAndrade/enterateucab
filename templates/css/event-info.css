@@ -49,6 +49,7 @@ body
 .author img
 {
     width: 100%;
+    border-radius: 50%;
 }
 .stat
 {
@@ -136,4 +137,29 @@ body
     background: rgba(255, 182, 78, 0.6);
     color: white;
     cursor: pointer;
+    transition: 0.5s all;
+}
+
+.assist:hover
+{
+    background: rgba(86, 255, 126, 0.9);
+}
+
+.button-edit{
+    display: none;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    color: white;
+    font-size: 50px;
+    border-radius: 50%;
+    position: fixed;
+    right: 1vw;
+    bottom: 1vw;
+    background: cyan;
+    cursor: pointer;
+    transition: 0.5s all;
+}
+.button-edit:hover{
+    background: cornflowerblue;
 }

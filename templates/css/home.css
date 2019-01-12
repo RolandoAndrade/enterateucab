@@ -326,7 +326,6 @@ header
 .join
 {
     font-size: 80px;
-    cursor: pointer;
 }
 
 .title-icon
@@ -388,6 +387,7 @@ footer
     height: 8vw;
     margin-top: 1vw;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 @media (max-width: 1000px) {

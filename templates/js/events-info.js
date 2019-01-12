@@ -27,7 +27,11 @@ function changeEventData(event)
     $(".data-fast.attendance").text(event.attendance+" asistentes");
     $(".data-fast.location").text(event.getLocationName());
 }
-
+function editableButton()
+{
+    $(".button-edit").show();
+    $(".button-edit").attr("href","../events/edit/"+getEventID());
+}
 async function retrieveEvent()
 {
     $(".loading").show();
@@ -40,6 +44,12 @@ async function retrieveEvent()
         aut=await author.other(event.author);
         changeAuthor(aut);
         changeEventData(event);
+        const user = await author.me();
+        if(user!=null)
+        {
+            if(user.email===aut.email)
+            editableButton();
+        }
     }
 
     $(".loading").hide();

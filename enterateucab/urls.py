@@ -26,7 +26,8 @@ urlpatterns = [
     path('', index, name="index"),
     path('login/', login, name="login"),
     path('signup/', signup, name="signup"),
-    path('events/<pk>', viewEvents, name="viewEvents"),
+    path('events/<pk>', viewEvents, name = "viewEvents"),
+    path('events/edit/<pk>', viewEvents, name="editEvents"),
     path('create/', createEvents, name="createEvents"),
 ]
 
