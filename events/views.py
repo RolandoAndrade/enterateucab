@@ -60,3 +60,10 @@ class UpdateUserData(generics.UpdateAPIView):
 class UpdateUserImage(generics.UpdateAPIView):
     queryset = models.User.objects.all()
     serializer_class = serializers.UpdateProfileImage
+
+    def put(self, request, *args, **kwargs):
+        if kwargs.get('pk') == 'me':
+            kwargs = {'pk': request.user.pk}
+            self.kwargs = kwargs
+            return self.update(request, *args, **kwargs)
+        return self.update(request, *args, **kwargs)

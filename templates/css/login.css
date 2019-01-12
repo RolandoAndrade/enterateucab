@@ -18,7 +18,7 @@ body{
     background-size: cover;
     background-attachment: fixed;
     text-align: center;
-    min-height: 125%;
+    min-height: 100%;
 }
 
 .login-card
@@ -27,7 +27,7 @@ body{
     font-size: 20px;
     width: 90%;
     max-width: 600px;
-    position: absolute;
+    position: relative;
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);

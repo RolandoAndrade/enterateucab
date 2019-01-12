@@ -165,6 +165,15 @@ class UserDAO
         const response = await request.execute();
         return response;
     }
+
+    async updateProfileImage(image)
+    {
+        const data ={
+            image: image
+        };
+        const request = new PutRequest(data,'../api/users/image/me');
+        return await request.execute();
+    }
 }
 
 class EventDAO
@@ -234,6 +243,12 @@ class AuthManager
     {
         const response = await this.dao.getUserByID(id);
         return new JSONparser().parseUser(response);
+    }
+
+    async updateProfileImage(url)
+    {
+        const response = await this.dao.updateProfileImage(url);
+        return response.image;
     }
 }
 
