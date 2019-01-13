@@ -18,7 +18,7 @@ from django.urls import path
 from django.conf.urls import include
 from django.conf.urls.static import static
 from django.conf import settings
-from .views import index, login, signup, viewEvents, createEvents
+from .views import index, login, signup, viewEvents, createEvents, viewCalendar
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,7 +28,8 @@ urlpatterns = [
     path('signup/', signup, name="signup"),
     path('events/<pk>', viewEvents, name = "viewEvents"),
     path('events/edit/<pk>', viewEvents, name="editEvents"),
-    path('create/', createEvents, name="createEvents"),
+    path('create/', createEvents, name = "createEvents"),
+    path('calendar/', viewCalendar, name="viewCalendar"),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

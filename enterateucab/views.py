@@ -44,3 +44,12 @@ def createEvents(request):
         return render_to_response("../templates/html/create-form.html")
     else:
         return redirect('../login')
+
+
+def viewCalendar(request):
+    if not isinstance(request.user, AnonymousUser):
+        # already logged
+        return render_to_response("../templates/html/calendar.html")
+    else:
+        # home"""
+        return render_to_response("../templates/html/calendar.html")
