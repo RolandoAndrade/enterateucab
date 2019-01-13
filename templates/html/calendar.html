@@ -1,19 +1,21 @@
+{% load staticfiles %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Entérate UCAB | Calendario</title>
-    <link rel="stylesheet" href="../css/home.css">
-    <link rel="stylesheet" href="../css/calendar.css">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/calendar.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Thasadith" rel="stylesheet">
-    <link rel="stylesheet" href="../css/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="{%  static 'css/css/material-design-iconic-font.min.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <header>
     <div class="section-header min">
         <i class="zmdi zmdi-menu button-menu" ></i>
     </div>
     <div class="section-header">
-        <img src="../img/logo.png" alt="" class="logo">
+        <img src="{% static 'img/logo.png' %}" alt="" class="logo">
     </div>
     <div class="section-header title">CALENDARIO <i class="zmdi zmdi-calendar title-icon"></i></div>
 </header>
@@ -167,8 +169,8 @@
             </div>
         </div>
     </div>
-    <script src="../js/jquery-3.1.1.min.js"></script>
-    <script src="../js/events-views.js"></script>
-    <script src="../js/calendar.js"></script>
+    <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+    <script src="{% static 'js/events-views.js' %}"></script>
+    <script src="{% static 'js/calendar.js' %}"></script>
 </body>
 </html>

@@ -106,3 +106,26 @@
     background: rgba(255, 203, 109, 0.5);
     text-align: center;
 }
+
+@media (max-width: 1000px)
+{
+    .calendar
+    {
+        left: 0;
+        width: 100%;
+    }
+    .week
+    {
+        width: 100vw;
+    }
+    .date
+    {
+        width: 14.28vw;
+        height: 14.28vw;
+    }
+    .day-description
+    {
+        width: 14.28vw;
+        font-size: 3vw;
+    }
+}
