@@ -1,7 +1,6 @@
 .calendar
 {
     position: absolute;
-    overflow: hidden;
     left: 15%;
     top: 100px;
     width: 85%;
@@ -21,7 +20,7 @@
 .week
 {
     display: block;
-    width: 85vw;
+    width: 100%;
 }
 .day-description
 {
@@ -30,7 +29,13 @@
     font-size: 2vw;
     display: inline-block;
     text-align: center;
-    background: rgba(255, 203, 109, 0.6);
+    background: rgba(61, 218, 255, 0.6);
+}
+.calendar-header
+{
+    position: sticky;
+    top: 0;
+    z-index: 30;
 }
 .events-of-day
 {
@@ -40,8 +45,7 @@
 .event-of-day
 {
     font-size: 1vw;
-    padding-top: 0.25vw;
-    padding-bottom: 0.25vw;
+    padding: 0.25vw;
     width: 100%;
     color: white;
     cursor: pointer;
@@ -49,6 +53,8 @@
 }
 .event-of-day.red
 {
+
+    text-align: center;
     background: rgba(255, 0, 0, 0.5);
 }
 .event-of-day.red:hover
@@ -57,6 +63,8 @@
 }
 .event-of-day.green
 {
+
+    text-align: center;
     background: rgba(19, 179, 0, 0.5);
 }
 .event-of-day.green:hover
@@ -65,6 +73,8 @@
 }
 .event-of-day.yellow
 {
+
+    text-align: center;
     background: rgba(255, 255, 0, 0.51);
 }
 .event-of-day.yellow:hover
@@ -73,6 +83,8 @@
 }
 .event-of-day.cyan
 {
+
+    text-align: center;
     background: rgba(0, 255, 255, 0.51);
 }
 .event-of-day.cyan:hover
@@ -103,7 +115,7 @@
 {
     font-size: 20px;
     color: white;
-    background: rgba(255, 203, 109, 0.5);
+    background: rgba(61, 218, 255, 0.5);
     text-align: center;
 }
 
@@ -127,5 +139,11 @@
     {
         width: 14.28vw;
         font-size: 3vw;
+    }
+    .calendar-header
+    {
+        position: sticky;
+        top: 100px;
+        z-index: 30;
     }
 }

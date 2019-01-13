@@ -13,3 +13,13 @@ let myWidget = cloudinary.createUploadWidget({
 $(".profile-image-navbar").on("click", function () {
    myWidget.open();
 });
+
+async function changeProfileImage()
+{
+    let user=await new AuthManager().me();
+    if(user!=null&&user.image&&user.image.includes("http"))
+    {
+        $(".profile-image-navbar").attr("src",user.image);
+    }
+}
+changeProfileImage();
