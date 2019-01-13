@@ -1,57 +1,174 @@
-{% load staticfiles %}
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
- <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <title>Entérate UCAB | Calendario</title>
-    <link rel="stylesheet" href="{%  static 'css/loading.css' %}">
-    <link rel="stylesheet" href="{%  static 'css/calendar.css' %}">
-    <link href="{% static 'img/logo.png' %}" rel="shortcut icon">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/calendar.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Thasadith" rel="stylesheet">
-    <link rel="stylesheet" href="{%  static 'css/css/material-design-iconic-font.min.css' %}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/css/material-design-iconic-font.min.css">
 </head>
+<header>
+    <div class="section-header min">
+        <i class="zmdi zmdi-menu button-menu" ></i>
+    </div>
+    <div class="section-header">
+        <img src="../img/logo.png" alt="" class="logo">
+    </div>
+    <div class="section-header title">CALENDARIO <i class="zmdi zmdi-calendar title-icon"></i></div>
+</header>
 <body>
-	<h1>Calendario</h1>
-<br/><br/>
-<div id="calendario">
-  <div id="anterior" onclick="mesantes()"></div>
-  <div id="posterior" onclick="mesdespues()"></div>
-  <h2 id="titulos"></h2>
-  <table id="diasc">
-    <tr id="fila0"><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr>
-    <tr id="fila1"><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-    <tr id="fila2"><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-    <tr id="fila3"><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-    <tr id="fila4"><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-    <tr id="fila5"><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-    <tr id="fila6"><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-  </table>
-  <div id="fechaactual"><i onclick="actualizar()">HOY: </i></div>
-  <div id="buscafecha">
-    <form action="#" name="buscar">
-      <p>Buscar ... MES
-        <select name="buscames">
-          <option value="0">Enero</option>
-          <option value="1">Febrero</option>
-          <option value="2">Marzo</option>
-          <option value="3">Abril</option>
-          <option value="4">Mayo</option>
-          <option value="5">Junio</option>
-          <option value="6">Julio</option>
-          <option value="7">Agosto</option>
-          <option value="8">Septiembre</option>
-          <option value="9">Octubre</option>
-          <option value="10">Noviembre</option>
-          <option value="11">Diciembre</option>
-        </select>
-      ... AÑO ...
-        <input type="text" name="buscaanno" maxlength="4" size="4" />
-      ... 
-        <input type="button" value="BUSCAR" onclick="mifecha()" />
-      </p>
-    </form>
-  </div>
-</div> 
+    <nav class="navbar">
+        <a class="join" href="login">
+            <i class="zmdi zmdi-account-add join-icon"></i>
+        </a>
+
+        <ul class="menu-selection">
+            <li><a class="menu-option" href="#!"> <i class="zmdi zmdi-home"></i> INICIO</a></li>
+            <li><a class="menu-option" href="#!"> <i class="zmdi zmdi-assignment"></i> NOTICIAS</a></li>
+            <li><a class="menu-option" href="#!"> <i class="zmdi zmdi-calendar"></i> CALENDARIO</a></li>
+        </ul>
+    </nav>
+    <div class="dark-background"></div>
+    <div class="calendar">
+        <div class="calendar-name">
+            EVENTOS DEL MES DE ENERO
+        </div>
+        <div class="week">
+            <div class="day-description">Lunes</div>
+            <div class="day-description">Martes</div>
+            <div class="day-description">Miércoles</div>
+            <div class="day-description">Jueves</div>
+            <div class="day-description">Viernes</div>
+            <div class="day-description">Sábado</div>
+            <div class="day-description">Domingo</div>
+        </div>
+        <div class="week">
+            <div class="date date1">
+                <div class="alpha">
+                    <div class="events-of-day">
+
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date-day">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="date date2">
+                <div class="alpha"></div>
+            </div>
+            <div class="date date3">
+                <div class="alpha"></div>
+            </div>
+            <div class="date date4">
+                <div class="alpha"></div>
+            </div>
+            <div class="date date5">
+                <div class="alpha"></div>
+            </div>
+            <div class="date date6">
+                <div class="alpha"></div>
+            </div>
+            <div class="date date7">
+                <div class="alpha"></div>
+            </div>
+        </div>
+        <div class="week">
+            <div class="date date8">
+                <div class="alpha"></div>
+            </div>
+            <div class="date date9">
+                <div class="alpha"></div>
+            </div>
+            <div class="date date10">
+                <div class="alpha"></div>
+            </div>
+            <div class="date date11">
+                <div class="alpha"></div>
+            </div>
+            <div class="date date12">
+                <div class="alpha"></div>
+            </div>
+            <div class="date date13">
+                <div class="alpha"></div>
+            </div>
+            <div class="date date14">
+                <div class="alpha"></div>
+            </div>
+        </div>
+        <div class="week">
+            <div class="date date15">
+                <div class="alpha"></div>
+            </div>
+            <div class="date date16">
+                <div class="alpha"></div>
+            </div>
+            <div class="date date17">
+                <div class="alpha"></div>
+            </div>
+            <div class="date date18">
+                <div class="alpha"></div>
+            </div>
+            <div class="date date19">
+                <div class="alpha"></div>
+            </div>
+            <div class="date date20">
+                <div class="alpha"></div>
+            </div>
+            <div class="date date21">
+                <div class="alpha"></div>
+            </div>
+        </div>
+        <div class="week">
+            <div class="date date22">
+                <div class="alpha"></div>
+            </div>
+            <div class="date date23">
+                <div class="alpha"></div>
+            </div>
+            <div class="date date24">
+                <div class="alpha"></div>
+            </div>
+            <div class="date date25">
+                <div class="alpha"></div>
+            </div>
+            <div class="date date26">
+                <div class="alpha"></div>
+            </div>
+            <div class="date date27">
+                <div class="alpha"></div>
+            </div>
+            <div class="date date28">
+                <div class="alpha"></div>
+            </div>
+        </div>
+        <div class="week">
+            <div class="date date29">
+                <div class="alpha"></div>
+            </div>
+            <div class="date date30">
+                <div class="alpha"></div>
+            </div>
+            <div class="date date31">
+                <div class="alpha"></div>
+            </div>
+            <div class="date date32">
+                <div class="alpha"></div>
+            </div>
+            <div class="date date33">
+                <div class="alpha"></div>
+            </div>
+            <div class="date date34">
+                <div class="alpha"></div>
+            </div>
+            <div class="date date35">
+                <div class="alpha"></div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/events-views.js"></script>
+    <script src="../js/calendar.js"></script>
 </body>
 </html>
