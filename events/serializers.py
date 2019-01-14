@@ -8,6 +8,12 @@ class EventDataSerializer(ModelSerializer):
         fields = '__all__'
 
 
+class EventNewsDataSerializer(ModelSerializer):
+    class Meta:
+        model = Event
+        fields = '__all__'
+
+
 class UserSerializer(ModelSerializer):
     attendance = EventDataSerializer(many=True, read_only=False)
 
@@ -20,6 +26,12 @@ class CreateEventSerializer(ModelSerializer):
     class Meta:
         model = Event
         fields = ('author', 'date', 'title', 'description', 'cover', 'media', 'location', 'place')
+
+
+class CreateNewsSerializer(ModelSerializer):
+    class Meta:
+        model = Event
+        fields = ('writer', 'date', 'title', 'description', 'cover', 'location')
 
 
 class AddUserToEventSerializer(ModelSerializer):

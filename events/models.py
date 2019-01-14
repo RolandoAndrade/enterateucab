@@ -43,3 +43,13 @@ class Event(models.Model):
     media = models.TextField(null = True, blank = True)
     location = models.IntegerField(null = True, blank = True)
     place = models.CharField(null = True, blank = True, max_length = 35)
+
+
+class EventNews(models.Model):
+    id = models.AutoField(primary_key = True)
+    writer = models.ForeignKey(User, on_delete = models.CASCADE, related_name = "writer")
+    date = models.DateTimeField(null = True, blank = True)
+    title = models.CharField(null = True, blank = True, max_length = 35)
+    description = models.TextField(null = True, blank = True)
+    cover = models.TextField(null = True, blank = True)
+    location = models.IntegerField(null = True, blank = True)
