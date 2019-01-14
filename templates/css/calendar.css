@@ -1,0 +1,149 @@
+.calendar
+{
+    position: absolute;
+    left: 15%;
+    top: 100px;
+    width: 85%;
+}
+.date
+{
+    box-sizing: border-box;
+    width: 12vw;
+    height: 12vw;
+    display: inline-block;
+    background: rgba(33,33,33,0.8);
+    border: solid rgba(33, 33, 33, 0.8) 1px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.week
+{
+    display: block;
+    width: 100%;
+}
+.day-description
+{
+    width: 12vw;
+    color: white;
+    font-size: 2vw;
+    display: inline-block;
+    text-align: center;
+    background: rgba(61, 218, 255, 0.6);
+}
+.calendar-header
+{
+    position: sticky;
+    top: 0;
+    z-index: 30;
+}
+.events-of-day
+{
+    position: absolute;
+    width: 50%;
+}
+.event-of-day
+{
+    font-size: 1vw;
+    padding: 0.25vw;
+    width: 100%;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s all;
+}
+.event-of-day.red
+{
+
+    text-align: center;
+    background: rgba(255, 0, 0, 0.5);
+}
+.event-of-day.red:hover
+{
+    background: rgba(255, 0, 0, 0.71);
+}
+.event-of-day.green
+{
+
+    text-align: center;
+    background: rgba(19, 179, 0, 0.5);
+}
+.event-of-day.green:hover
+{
+    background: rgba(19, 179, 0, 0.7);
+}
+.event-of-day.yellow
+{
+
+    text-align: center;
+    background: rgba(255, 255, 0, 0.51);
+}
+.event-of-day.yellow:hover
+{
+    background: rgba(255, 255, 0, 0.7);
+}
+.event-of-day.cyan
+{
+
+    text-align: center;
+    background: rgba(0, 255, 255, 0.51);
+}
+.event-of-day.cyan:hover
+{
+    background: rgba(0, 255, 255, 0.7);
+}
+
+
+
+
+
+.event-of-day:hover
+{
+}
+.calendar-date
+{
+    position: absolute;
+    right: 0;
+    padding: 0.25vw;
+}
+.date-day
+{
+    font-size: 3vw;
+    color: white;
+}
+
+.calendar-name
+{
+    font-size: 20px;
+    color: white;
+    background: rgba(61, 218, 255, 0.5);
+    text-align: center;
+}
+
+@media (max-width: 1000px)
+{
+    .calendar
+    {
+        left: 0;
+        width: 100%;
+    }
+    .week
+    {
+        width: 100vw;
+    }
+    .date
+    {
+        width: 14.28vw;
+        height: 14.28vw;
+    }
+    .day-description
+    {
+        width: 14.28vw;
+        font-size: 3vw;
+    }
+    .calendar-header
+    {
+        position: sticky;
+        top: 100px;
+        z-index: 30;
+    }
+}
