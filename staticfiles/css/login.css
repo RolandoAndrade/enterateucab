@@ -4,14 +4,21 @@
     /*font-family: 'Roboto', sans-serif;*/
     font-family: 'Thasadith', sans-serif;
 }
+html
+{
+    width: 100%;
+    height: 100%;
+}
 body{
     width: 100%;
-    background: url("../img/ucabblur.jpg");
+    height: 100%;
+    background-image: url("../img/ucabblur.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     text-align: center;
+    min-height: 100%;
 }
 
 .login-card
@@ -20,13 +27,30 @@ body{
     font-size: 20px;
     width: 90%;
     max-width: 600px;
-    position: absolute;
-    top: 50%;
+    position: relative;
     left: 50%;
+    top: 50%;
     transform: translate(-50%,-50%);
     text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
 
 }
+
+.sign-card
+{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: rgba(33,33,33,0.6);
+    font-size: 20px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    margin: 5% 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+}
+
 .label-login
 {
 
@@ -146,4 +170,14 @@ body{
     left: 0;
     text-decoration: none;
     color: white;
+}
+
+.select-form
+{
+    width: calc(100%);
+    font-size: 20px;
+    padding: 5px;
+    padding-left: 55px;
+    height: 40px;
+    border: solid cyan 2px;
 }

@@ -5,13 +5,21 @@
     /*font-family: 'Roboto', sans-serif;*/
     font-family: 'Thasadith', sans-serif;
 }
+html
+{
+    width: 100%;
+    height: 100%;
+}
 body{
     width: 100%;
-    background: url("../img/ucabblur.jpg");
+    height: 100%;
+    background-image: url("../img/ucabblur.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
     background-attachment: fixed;
+    min-height: 100%;
 }
 .card
 {
@@ -278,7 +286,8 @@ header
 }
 .logo
 {
-    height: 70px;
+    height: 100px;
+    width: 100%;
 }
 .section-header.logo
 {
@@ -317,29 +326,35 @@ header
 .join
 {
     font-size: 80px;
-    cursor: pointer;
 }
 
 .title-icon
 {
     margin-right: 20px;
 }
+.menu-selection li
+{
+    text-align: left;
+    width: 100%;
+}
 .menu-option
 {
     width: 100%;
+    display: block;
     font-size: 2vw;
     text-align: left;
-    padding: 0.5vw;
     padding-top: 1vw;
     padding-bottom: 1vw;
     transition: all 0.5s;
 }
+
+
+
 .menu-selection
 {
     position: absolute;
     top: 50%;
     transform: translate(0,-50%);
-    cursor: pointer;
     width: 100%;
     overflow: hidden;
 }
@@ -372,6 +387,7 @@ footer
     height: 8vw;
     margin-top: 1vw;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 @media (max-width: 1000px) {
@@ -456,6 +472,7 @@ footer
 
     .logo
     {
+        margin-top: 20px;
         height: 60px;
     }
     .section-header.min
@@ -521,7 +538,19 @@ footer
     .logo
     {
         height: 50px;
+        margin-top: 25px;
     }
+    .menu-option
+    {
+        font-size: 7vw;
+    }
+    .navbar
+    {
+        left: -50%;
+        width: 50%;
+    }
+
+
 }
 
 a{
@@ -531,4 +560,20 @@ a{
 a:visited{
     color: white;
     text-decoration: none;
+}
+
+@media (max-width: 600px)
+{
+    html
+    {
+        height: calc(100% + 56px);
+    }
+    body
+    {
+        height: calc(100% + 56px);
+    }
+}
+.menu-option a
+{
+    font-size: inherit;
 }

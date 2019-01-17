@@ -7,13 +7,15 @@
     <link rel="stylesheet" href="{%  static 'css/home.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Thasadith" rel="stylesheet">
     <link rel="stylesheet" href="{%  static 'css/css/material-design-iconic-font.min.css' %}">
+    <link rel="stylesheet" href="{%  static 'css/loading.css' %}">
+    <link href="{% static 'img/logo.png' %}" rel="shortcut icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <header>
     <div class="section-header min">
         <i class="zmdi zmdi-menu button-menu"></i>
     </div>
-    <div class="section-header logo">
+    <div class="section-header">
         <img src="{% static 'img/logo.png' %}" alt="" class="logo">
     </div>
     <div class="section-header title">INICIO <i class="zmdi zmdi-home title-icon"></i></div>
@@ -21,13 +23,14 @@
 <body>
     <nav class="navbar">
         <div class="join">
-            <img class="profile-image-navbar" src="http://www.horoscopo.com/img/signs/perfile-sagitario.png" alt="">
+            <img class="profile-image-navbar" src="{% static 'img/user.png' %}" alt="">
         </div>
 
         <ul class="menu-selection">
-            <li class="menu-option"><i class="zmdi zmdi-home"></i> INICIO</li>
-            <li class="menu-option"><i class="zmdi zmdi-assignment"></i> NOTICIAS</li>
-            <li class="menu-option"><i class="zmdi zmdi-calendar"></i> CALENDARIO</li>
+            <li><a class="menu-option" href="#!"> <i class="zmdi zmdi-home"></i> INICIO</a></li>
+            <li><a class="menu-option" href="#!"> <i class="zmdi zmdi-assignment"></i> NOTICIAS</a></li>
+            <li><a class="menu-option" href="../calendar"> <i class="zmdi zmdi-calendar"></i> CALENDARIO</a></li>
+            <li><a class="menu-option" href="create"> <i class="zmdi zmdi-plus"></i> CREAR</a></li>
         </ul>
     </nav>
     <div class="dark-background"></div>
@@ -281,9 +284,23 @@
             </div>
         </div>
     </div>
+
+    <!-------------Loading----------------->
+    <div class="loading">
+		<div id="loading27">
+      	      <div class="colorBalls"></div>
+		</div>
+		<div class="loadingText">
+			Espere un momento por favor...
+		</div>
+	</div>
+
+    <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
     <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
     <script src="{% static 'js/request.js' %}"></script>
     <script src="{% static 'js/managers.js' %}"></script>
+    <script src="{% static 'js/events-views.js' %}"></script>
+    <script src="{% static 'js/change-profile-image.js' %}"></script>
     <script src="{% static 'js/pruebas.js' %}"></script>
 </body>
 </html>
