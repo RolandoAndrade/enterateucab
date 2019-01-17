@@ -88,6 +88,35 @@ class Event
     }
 }
 
+class News
+{
+    constructor(id, writer, date, title, description, cover, location)
+    {
+        this.id = id;
+        this.writer = writer;
+        this.date = date;
+        this.title = title;
+        this.description = description;
+        this.cover = cover;
+        this.location=location;
+    }
+    getLocationName()
+    {
+        switch (this.location)
+        {
+            case 1:
+                return "Caracas";
+            case 2:
+                return "Los Teques";
+            case 3:
+                return "Puerto Ordaz";
+            case 4:
+                return "Coro"
+        }
+    }
+}
+
+
 class JSONparser
 {
     parseUser(json)
@@ -111,6 +140,17 @@ class JSONparser
                 json.attendance?json.attendance.length:0,
                 json.title, json.description, json.cover, json.media, json.location, json.place);
             return event;
+        }
+        return null;
+    }
+    parseNews(json)
+    {
+        if(json.id)
+        {
+            json.description=json.description.replace(/\n/g, "<br />");
+            let news= new News(json.id?json.id:0,json.writer,new MyDate(json.date),
+                json.title, json.description, json.cover,json.location);
+            return news;
         }
         return null;
     }
@@ -214,6 +254,36 @@ class EventDAO
     }
 }
 
+class NewsDAO
+{
+    async create(event)
+    {
+        const data ={
+            writer: 1,
+            date: event.date,
+            title: event.title,
+            description: event.description,
+            cover: event.cover,
+            location: event.location
+        };
+        const request = new PostRequest(data,'../api/news/create');
+        return await request.execute();
+    }
+
+    async getNewsByID(id)
+    {
+        const request=new GetRequest('../api/news/get/'+id);
+        return await request.execute();
+    }
+
+    async getAll()
+    {
+        const request=new GetRequest('../api/news/getAll');
+        return await request.execute();
+    }
+}
+
+
 class AuthManager
 {
     constructor()
@@ -303,5 +373,54 @@ class EventManager
     async attendToEventWithID(id)
     {
         return await this.dao.attendToEventWithID(id);
+    }
+}
+
+class NewsManager
+{
+    constructor()
+    {
+        this.dao=new NewsDAO();
+    }
+
+    async create(date, title, description, cover, location)
+    {
+        const event=new News(0,0,date,title, description, cover, location);
+        const response= await this.dao.create(event);
+        return new JSONparser().parseNews(response);
+    }
+
+    async getNewsByID(id)
+    {
+        const response= await this.dao.getNewsByID(id);
+        return new JSONparser().parseNews(response);
+    }
+
+    async getAll()
+    {
+        const response= await this.dao.getAll();
+        let r=[];
+        const parser=new JSONparser();
+        for(let i=0;i<response.length;i++)
+        {
+            r.push(parser.parseNews(response[i]));
+        }
+        this.sort(r);
+        return r;
+    }
+
+    sort(data)
+    {
+        for(let i=0;i<data.length;i++)
+        {
+            for(let j=i+1;j<data.length;j++) {
+                if (data[i].date.date < data[j].date.date)
+                {
+                    let aux=data[i];
+                    data[i]=data[j];
+                    data[j]=aux;
+                }
+            }
+        }
     }
 }

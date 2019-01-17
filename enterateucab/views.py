@@ -53,3 +53,12 @@ def viewCalendar(request):
     else:
         # home"""
         return render_to_response("../templates/html/calendar.html")
+
+
+def viewNews(request):
+    if not isinstance(request.user, AnonymousUser):
+        # already logged
+        return render_to_response("../templates/html/news-logged.html")
+    else:
+        # home"""
+        return render_to_response("../templates/html/news.html")

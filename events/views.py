@@ -24,7 +24,7 @@ class ViewEventByID(generics.RetrieveAPIView):
 
 
 class ViewNewsByID(generics.RetrieveAPIView):
-    queryset = models.Event.objects.all()
+    queryset = models.EventNews.objects.all()
     serializer_class = serializers.EventNewsDataSerializer
 
 
@@ -34,7 +34,7 @@ class ViewAllEvents(generics.ListAPIView):
 
 
 class ViewAllNews(generics.ListAPIView):
-    queryset = models.Event.objects.all()
+    queryset = models.EventNews.objects.all()
     serializer_class = serializers.EventNewsDataSerializer
 
 
@@ -47,7 +47,7 @@ class CreateEvent(generics.CreateAPIView):
 
 
 class CreateEventNews(generics.CreateAPIView):
-    queryset = models.Event.objects.all()
+    queryset = models.EventNews.objects.all()
     serializer_class = serializers.CreateNewsSerializer
 
     def perform_create(self, serializer):
@@ -71,7 +71,7 @@ class DeleteEvent(generics.DestroyAPIView):
 
 
 class DeleteNews(generics.DestroyAPIView):
-    queryset = models.Event.objects.all()
+    queryset = models.EventNews.objects.all()
     serializer_class = serializers.EventNewsDataSerializer
 
 

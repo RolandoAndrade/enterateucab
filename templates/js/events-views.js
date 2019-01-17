@@ -40,6 +40,50 @@ class CardEvent
         });
     }
 }
+class CardNews
+{
+    constructor(event, i)
+    {
+        i++;
+        this.changeDay(event.date.getNameOfDay(),i);
+        this.changeMonth(event.date.getNameOfMonth(),i);
+        this.changeNumberDay(event.date.getDay(),i);
+        this.changeTitle(event.title, i);
+        this.changeCover(event.cover, i);
+        this.onClickEvent(event, i);
+    }
+    changeDay(day, i)
+    {
+        $(".card"+i).find(".text-day.day").text(day);
+    }
+    changeMonth(month, i)
+    {
+        $(".card"+i).find(".text-day.month").text(month);
+    }
+    changeNumberDay(number,i)
+    {
+        $(".card"+i).find(".number-day").text(number);
+    }
+
+    changeTitle(title, i)
+    {
+        $(".card"+i).find(".title-event-card").text(title);
+    }
+
+    changeCover(cover, i)
+    {
+        $(".card"+i).find(".card").css("background-image", 'url('+cover+')');
+    }
+    onClickEvent(event, i)
+    {
+        $(".card"+i).click(function ()
+        {
+            window.location="news/"+event.id;
+        });
+    }
+}
+
+
 
 function navbar()
 {
