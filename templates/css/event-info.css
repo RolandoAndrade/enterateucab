@@ -163,3 +163,22 @@ body
 .button-edit:hover{
     background: cornflowerblue;
 }
+
+.bigstat
+{
+    box-sizing: border-box;
+    width: 100%;
+    background: transparent;
+    padding-top: 0;
+    display: inline-block;
+}
+
+.author.center
+{
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.stat.name-author>.name.center
+{
+    width: 100%;
+}

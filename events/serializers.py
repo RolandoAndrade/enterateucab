@@ -1,5 +1,5 @@
 from rest_framework.serializers import ModelSerializer, IntegerField
-from .models import User, Event
+from .models import User, Event, EventNews
 
 
 class EventDataSerializer(ModelSerializer):
@@ -10,7 +10,7 @@ class EventDataSerializer(ModelSerializer):
 
 class EventNewsDataSerializer(ModelSerializer):
     class Meta:
-        model = Event
+        model = EventNews
         fields = '__all__'
 
 
@@ -30,7 +30,7 @@ class CreateEventSerializer(ModelSerializer):
 
 class CreateNewsSerializer(ModelSerializer):
     class Meta:
-        model = Event
+        model = EventNews
         fields = ('writer', 'date', 'title', 'description', 'cover', 'location')
 
 

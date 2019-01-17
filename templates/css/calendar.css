@@ -85,11 +85,11 @@
 {
 
     text-align: center;
-    background: rgba(0, 255, 255, 0.51);
+    background: rgba(47, 126, 145,0.51);
 }
 .event-of-day.cyan:hover
 {
-    background: rgba(0, 255, 255, 0.7);
+    background: rgba(50, 145, 167,0.7);
 }
 
 

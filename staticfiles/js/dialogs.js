@@ -27,3 +27,50 @@ class SwalModal
 		}).then(this.action).catch(swal.noop);
     }
 }
+
+class ErrorDialog extends SwalModal
+{
+    constructor(message)
+    {
+        super("Error",message, "error", false,
+        "#ffb64e","","Ok", "", null);
+        this.show();
+    }
+}
+
+class SuccessDialog extends SwalModal
+{
+    constructor(message)
+    {
+        super("Perfecto",message, "success", false,
+        "#ffb64e","","Ok", "", null);
+        this.show();
+    }
+}
+
+class TimerDialog
+{
+    constructor(title, message, type, time)
+    {
+        this.title = title;
+        this.message = message;
+        this.type = type;
+        this.time = time;
+    }
+
+    show() {
+        let timerInterval
+        swal(
+            {
+                title: this.title,
+                type: this.type,
+                html: this.message,
+                timer: this.time,
+                onClose: () => {
+                    clearInterval(timerInterval);
+                    window.location="../"
+                }
+            }).then((result) => {
+        });
+    }
+}

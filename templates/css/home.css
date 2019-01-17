@@ -287,7 +287,7 @@ header
 .logo
 {
     height: 100px;
-    width: 100%;
+    width: auto;
 }
 .section-header.logo
 {
@@ -576,4 +576,15 @@ a:visited{
 .menu-option a
 {
     font-size: inherit;
+}
+
+.exit-button
+{
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+.exit-button:hover
+{
+    color: gray;
 }
