@@ -3,7 +3,7 @@
     position: absolute;
     left: 15%;
     top: 100px;
-    width: 85%;
+    width: 85vw;
 }
 .date
 {
@@ -91,10 +91,6 @@
 {
     background: rgba(50, 145, 167,0.7);
 }
-
-
-
-
 
 .event-of-day:hover
 {
