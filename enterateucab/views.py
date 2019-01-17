@@ -39,6 +39,9 @@ def viewEvents(request, pk):
         return render_to_response("../templates/html/event-info.html")
 
 
+def openNews(request, pk):
+        return render_to_response("../templates/html/news-info.html")
+
 def createEvents(request):
     if not isinstance(request.user, AnonymousUser):
         return render_to_response("../templates/html/create-form.html")

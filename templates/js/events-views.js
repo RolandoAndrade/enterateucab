@@ -78,7 +78,7 @@ class CardNews
     {
         $(".card"+i).click(function ()
         {
-            window.location="news/"+event.id;
+            window.location="../news/"+event.id;
         });
     }
 }
@@ -124,7 +124,13 @@ function navbar()
     });
 }
 
+$(".exit-button").click(function ()
+{
+    new AuthManager().logout();
+});
+
 $(document).ready(function ()
 {
     navbar();
 });
+

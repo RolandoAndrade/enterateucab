@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import ViewUser, CreateEvent, ViewEventByID, ViewAllEvents, AddUserToEvent, DeleteEvent, UpdateUserData, UpdateUserImage, ViewNewsByID, ViewAllNews, DeleteNews
+from .views import ViewUser, CreateEvent, ViewEventByID, ViewAllEvents, AddUserToEvent, DeleteEvent, UpdateUserData, UpdateUserImage, ViewNewsByID, ViewAllNews, DeleteNews, CreateEventNews
 
 urlpatterns = [
     path('users/', include('rest_auth.urls')),
@@ -15,4 +15,5 @@ urlpatterns = [
     path('news/get/<pk>', ViewNewsByID.as_view()),
     path('news/getAll', ViewAllNews.as_view()),
     path('news/delete/<pk>', DeleteNews.as_view()),
+    path('news/create', CreateEventNews.as_view()),
 ]

@@ -4,8 +4,17 @@ async function prueba()
     let data=await new EventManager().getAll();
 
     $(".loading").hide();
-    for(let i=0;i<data.length&&i<10;i++)
-        new CardEvent(data[i],i);
+    let d=new Date();
+    let a=0;
+    for(let i=0;i<data.length&&a<10;i++)
+    {
+        if(data[i].date.date>=d)
+        {
+            new CardEvent(data[i],a++);
+        }
+
+    }
+
 }
 
 prueba();

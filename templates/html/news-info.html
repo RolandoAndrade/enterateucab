@@ -1,0 +1,77 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Entérate UCAB | Eventos</title>
+    <link rel="stylesheet" href="{%  static 'css/event-info.css' %}">
+    <link rel="stylesheet" href="{%  static 'css/loading.css' %}">
+    <link href="{% static 'img/logo.png' %}" rel="shortcut icon">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Thasadith" rel="stylesheet">
+    <link rel="stylesheet" href="{%  static 'css/css/material-design-iconic-font.min.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="event-card">
+        <div class="event-image">
+
+        </div>
+        <div class="data">
+            <div class="stat name-author">
+                <div class="name center">
+                    Rolando Andrade
+                </div>
+
+            </div>
+            <div class="author center">
+                <img id="author-profile-image" src="{% static 'img/user.png' %}" alt="">
+            </div>
+            <div class="event-title bigstat">
+                Lorem ipsum dolor sit amet, consectetur
+            </div>
+        </div>
+        <div class="content">
+            <div class="description">
+                <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi blanditiis corporis cumque
+                    distinctio dolore facere fugit hic incidunt maiores molestias mollitia nam nobis nostrum officia
+                    optio praesentium quis, recusandae similique.
+                </div>
+                <div>Adipisci, distinctio dolorem explicabo iure odio possimus quasi quidem soluta. Deleniti dolor eaque
+                    eum excepturi explicabo fugit incidunt iusto laborum laudantium, nemo nihil nisi odio placeat quas
+                    tempore veniam voluptate.
+                </div>
+                <div>Accusamus adipisci alias fugit inventore maxime nam neque perferendis recusandae sint, tempora.
+                    Culpa eius porro quisquam sint. Aliquam architecto consectetur consequuntur ea enim error fugiat
+                    laborum suscipit temporibus, voluptatem. Necessitatibus.
+                </div>
+            </div>
+        </div>
+
+        <!---
+        <div class="assist">
+            Asistir <i class="zmdi zmdi-check"></i>
+        </div>
+        -->
+    </div>
+    <a href="../news" class="back-button-float">
+        <i class="zmdi zmdi-arrow-back icon-back"></i>
+    </a>
+
+        <!-------------Loading----------------->
+    <div class="loading">
+		<div id="loading27">
+      	      <div class="colorBalls"></div>
+		</div>
+		<div class="loadingText">
+			Espere un momento por favor...
+		</div>
+	</div>
+
+    <script src="{% static 'js/jquery-3.1.1.min.js'%}"></script>
+    <script src="{% static 'js/sweetalert2.min.js'%}"></script>
+    <script src="{% static 'js/request.js'%}"></script>
+    <script src="{% static 'js/managers.js'%}"></script>
+    <script src="{% static 'js/dialogs.js'%}"></script>
+    <script src="{% static 'js/news-info.js'%}"></script>
+</body>
+</html>

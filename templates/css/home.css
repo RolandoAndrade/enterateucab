@@ -577,3 +577,14 @@ a:visited{
 {
     font-size: inherit;
 }
+
+.exit-button
+{
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+.exit-button:hover
+{
+    color: gray;
+}

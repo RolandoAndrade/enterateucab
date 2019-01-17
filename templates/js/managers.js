@@ -173,7 +173,7 @@ class UserDAO
         const data ={
             nothing: ""
         };
-        const request = new PostRequest(data,'api/users/logout/');
+        const request = new PostRequest(data,'../api/users/logout/');
         return await request.execute();
     }
 
@@ -295,6 +295,12 @@ class AuthManager
     {
         const user=new User(email, password);
         return await this.dao.login(user);
+    }
+
+    async logout()
+    {
+        await this.dao.logout();
+        window.location="../";
     }
 
     async signup(email, password, firsName, lastName, career, location, image)
